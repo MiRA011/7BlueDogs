@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <TextView
+        android:id="@+id/tContador"
+        android:layout_width="183dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="96dp"
+        android:text="@string/tContador"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bReset"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="332dp"
+        android:text="@string/bReset"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/bSuma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="268dp"
+        android:layout_marginBottom="24dp"
+        android:text="@string/bSuma"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/bReset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <Button
+        android:id="@+id/bResta"
+        android:layout_width="0dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="220dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/bResta"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tContador" />
+
+    <TextView
+        android:id="@+id/tCuenta"
+        android:layout_width="79dp"
+        android:layout_height="69dp"
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="96dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
