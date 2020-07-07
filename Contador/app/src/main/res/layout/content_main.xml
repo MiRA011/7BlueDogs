@@ -27,7 +27,8 @@
         android:text="@string/bReset"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="reseteaContador"/>
 
     <Button
         android:id="@+id/bSuma"
@@ -41,7 +42,8 @@
         app:layout_constraintBottom_toTopOf="@+id/bReset"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.925" />
+        app:layout_constraintVertical_bias="0.925"
+        android:onClick="incrementaContador"/>
 
     <Button
         android:id="@+id/bResta"
@@ -52,13 +54,17 @@
         android:text="@string/bResta"
         android:textSize="36sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tContador" />
+        app:layout_constraintTop_toBottomOf="@+id/tContador"
+        android:onClick="restaContador" />
 
     <TextView
         android:id="@+id/tCuenta"
         android:layout_width="79dp"
         android:layout_height="69dp"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="96dp" />
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="96dp"
+        android:textSize="40sp"
+        app:layout_constraintStart_toEndOf="@+id/tContador"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
