@@ -43,6 +43,9 @@
             android:onClick="restaContador"
             android:text="@string/bResta"
             android:textSize="36sp" />
+        <Space
+            android:layout_width="40dp"
+            android:layout_height="0dp" />
 
         <Button
             android:id="@+id/bSuma"
@@ -65,8 +68,8 @@
 
         <TextView
             android:id="@+id/tContador"
-            android:layout_width="183dp"
-            android:layout_height="69dp"
+            android:layout_width="185dp"
+            android:layout_height="70dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="80dp"
             android:text="@string/tContador"
@@ -74,8 +77,8 @@
 
         <TextView
             android:id="@+id/tCuenta"
-            android:layout_width="79dp"
-            android:layout_height="69dp"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:textAlignment="center"
