@@ -12,19 +12,38 @@
         android:layout_height="200dp"
         android:layout_marginTop="475dp"
         android:gravity="center"
-        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/bReset"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
+            android:layout_width="150dp"
+            android:layout_height="70dp"
             android:layout_marginStart="0dp"
             android:layout_marginTop="0dp"
             android:onClick="reseteaContador"
             android:text="@string/bReset"
-            android:textSize="36sp" />
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="numberSigned"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <CheckBox
+            android:id="@+id/negativo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/n_negativos" />
+
     </LinearLayout>
 
     <LinearLayout

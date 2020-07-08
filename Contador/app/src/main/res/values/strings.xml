@@ -13,4 +13,5 @@
     <string name="tContador">Contador:</string>
     <string name="bSuma">+1</string>
     <string name="bResta">-1</string>
+    <string name="n_negativos">Números negativos</string>
 </resources>
