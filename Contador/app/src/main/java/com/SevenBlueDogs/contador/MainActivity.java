@@ -2,7 +2,10 @@ package com.SevenBlueDogs.contador;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -18,6 +21,22 @@ public class MainActivity extends Activity {
         cuenta=(TextView) findViewById(R.id.tCuenta);
         negativos= (CheckBox) findViewById(R.id.negativo);
         contador=0;
+        EventoTeclado teclado= new EventoTeclado();
+        EditText n_reset= (EditText) findViewById(R.id.n_reset);
+        n_reset.setOnEditorActionListener(teclado);
+    }
+
+    class EventoTeclado implements TextView.OnEditorActionListener{
+
+        @Override
+        public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+
+            if(i== EditorInfo.IME_ACTION_DONE){
+                reseteaContador(null);
+            }
+
+            return false;
+        }
     }
 
     public void incrementaContador(View vista){
@@ -41,6 +60,9 @@ public class MainActivity extends Activity {
         verificar();
         n_reset.setText("");
         escribir();
+        InputMethodManager teclado= (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+        teclado.hideSoftInputFromWindow(n_reset.getWindowToken(),0);
+
     }
 
     public void checkbox(View vista){
