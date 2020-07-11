@@ -5,16 +5,151 @@
     android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:weightSum="3"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutBotones"
+        android:layout_width="391dp"
+        android:layout_height="181dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout2"
+        android:baselineAligned="false">
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutResolver"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <Button
+                android:id="@+id/bResolver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/resolver"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutNuevo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="25dp" />
+
+            <Button
+                android:id="@+id/bNuevaRonda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nueva_ronda"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <Button
+                android:id="@+id/bNuevoJuego"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nuevo_juego"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
+        android:layout_width="393dp"
+        android:layout_height="253dp"
+        android:orientation="vertical"
+        android:weightSum="3"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout1">
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutGanador"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tGanador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ganador"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutPP"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bPiedra"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:text="@string/piedra"
+                android:textSize="28sp" />
+
+            <Space
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/bPapel"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:text="@string/papel"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayoutT"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/bTijeras"
+                android:layout_width="150dp"
+                android:layout_height="55dp"
+                android:text="@string/tijeras"
+                android:textSize="28sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
         android:layout_height="350dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:baselineAligned="false">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/LinearLayoutJ1"
@@ -29,7 +164,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jugador_1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="28sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/tListoJ1"
@@ -37,14 +177,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tListoJ1"
                 android:textAlignment="center"
-                android:textSize="40sp" />
+                android:textSize="30sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/tScoreJ1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/scorej1"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                android:textSize="28sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -59,7 +204,14 @@
                 android:id="@+id/tRonda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tRonda" />
+                android:text="@string/tRonda"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/tCuentaRonda"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -74,20 +226,30 @@
                 android:id="@+id/tJ2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/jugador_2" />
+                android:text="@string/jugador_2"
+                android:textSize="28sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/tListoJ2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/t_listo_j2"
-                android:textSize="40sp" />
+                android:textSize="30sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
                 android:id="@+id/tScoreJ2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/scorej2" />
+                android:text="@string/scorej2"
+                android:textSize="28sp" />
         </LinearLayout>
     </LinearLayout>
 

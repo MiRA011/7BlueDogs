@@ -16,4 +16,11 @@
     <string name="jugador_2">Jugador 2</string>
     <string name="t_listo_j2">...</string>
     <string name="scorej2">Score:</string>
+    <string name="ganador">¿Quién ganará?</string>
+    <string name="piedra">Piedra</string>
+    <string name="papel">Papel</string>
+    <string name="tijeras">Tijeras</string>
+    <string name="resolver">Resolver</string>
+    <string name="nuevo_juego">Nuevo Juego</string>
+    <string name="nueva_ronda">Nueva Ronda</string>
 </resources>
