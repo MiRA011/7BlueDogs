@@ -246,9 +246,10 @@
 
             <TextView
                 android:id="@+id/tScoreJ2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/scorej2"
+                android:textAlignment="center"
                 android:textSize="28sp" />
         </LinearLayout>
     </LinearLayout>
