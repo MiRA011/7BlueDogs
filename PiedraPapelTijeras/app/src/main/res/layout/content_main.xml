@@ -5,18 +5,20 @@
     android:id="@+id/MainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="50dp"
     android:weightSum="3"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <LinearLayout
         android:id="@+id/LinearLayoutBotones"
-        android:layout_width="391dp"
-        android:layout_height="181dp"
+        android:layout_width="350dp"
+        android:layout_height="173dp"
         android:layout_weight="1"
+        android:baselineAligned="false"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout2"
-        android:baselineAligned="false">
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout2">
 
         <LinearLayout
             android:id="@+id/LinearLayoutResolver"
@@ -76,11 +78,12 @@
 
     <LinearLayout
         android:id="@+id/LinearLayout2"
-        android:layout_width="393dp"
-        android:layout_height="253dp"
+        android:layout_width="350dp"
+        android:layout_height="200sp"
+        android:layout_weight="1"
         android:orientation="vertical"
         android:weightSum="3"
-        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LinearLayout1">
 
@@ -113,7 +116,7 @@
                 android:layout_height="55dp"
                 android:onClick="pulsaPiedra"
                 android:text="@string/piedra"
-                android:textSize="28sp" />
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="50dp"
@@ -125,7 +128,7 @@
                 android:layout_height="55dp"
                 android:onClick="pulsaPapel"
                 android:text="@string/papel"
-                android:textSize="28sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -142,18 +145,19 @@
                 android:layout_height="55dp"
                 android:onClick="pulsaTijera"
                 android:text="@string/tijeras"
-                android:textSize="28sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/LinearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="350dp"
+        android:layout_height="257dp"
         android:layout_weight="1"
         android:baselineAligned="false"
         android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -171,7 +175,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/jugador_1"
                 android:textAlignment="center"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -228,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/jugador_2"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
             <Space
                 android:layout_width="match_parent"
