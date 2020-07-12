@@ -12,13 +12,137 @@ import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    public boolean listoJ1, listoJ2, ganador;
+    public int pj1, pj2, nronda, jj1, jj2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        nronda=1;
     }
 
+    public void pulsaPiedra(View vista){
+        if(!listoJ1){
+            jj1=1;
+            listoJ1=true;
+            TextView listo= (TextView) findViewById(R.id.tListoJ1);
+            listo.setText("¡Listo!");
+        }else if(listoJ1 && !listoJ2){
+            jj2=1;
+            listoJ2=true;
+            TextView listo= (TextView) findViewById(R.id.tListoJ2);
+            listo.setText("¡Listo!");
+        }
+    }
+    public void pulsaPapel(View vista){
+        if(!listoJ1){
+            jj1=2;
+            listoJ1=true;
+            TextView listo= (TextView) findViewById(R.id.tListoJ1);
+            listo.setText("¡Listo!");
+        }else if(listoJ1 && !listoJ2){
+            jj2=2;
+            listoJ2=true;
+            TextView listo= (TextView) findViewById(R.id.tListoJ2);
+            listo.setText("¡Listo!");
+        }
+    }
+    public void pulsaTijera(View vista) {
+        if (!listoJ1) {
+            jj1 = 3;
+            listoJ1 = true;
+            TextView listo = (TextView) findViewById(R.id.tListoJ1);
+            listo.setText("¡Listo!");
+        } else if (listoJ1 && !listoJ2) {
+            jj2 = 3;
+            listoJ2 = true;
+            TextView listo = (TextView) findViewById(R.id.tListoJ2);
+            listo.setText("¡Listo!");
+        }
+    }
+
+    public void resolver(View vista){
+        if(listoJ1 && listoJ2 && !ganador){
+            TextView tGanador = (TextView) findViewById(R.id.tGanador);
+            TextView tScoreJ1 = (TextView) findViewById(R.id.tScoreJ1);
+            TextView tScoreJ2 = (TextView) findViewById(R.id.tScoreJ2);
+            ganador=true;
+           if(jj1==jj2){ //empate
+               tGanador.setText("Hay un empate...");
+           }else if(jj1==1 && jj2==2){ //gana j2
+               tGanador.setText("¡Ha ganado el Jugador 2!");
+               pj2++;
+               tScoreJ2.setText("Score: "+pj2);
+
+           }else if(jj1==1 && jj2==3){ //gana j1
+               tGanador.setText("¡Ha ganado el Jugador 1!");
+               pj1++;
+               tScoreJ1.setText("Score: "+pj1);
+
+           }else if(jj1==2 && jj2==1){ //gana j1
+               tGanador.setText("¡Ha ganado el Jugador 1!");
+               pj1++;
+               tScoreJ1.setText("Score: "+pj1);
+
+           }else if(jj1==2 && jj2==3){ //gana j2
+               tGanador.setText("¡Ha ganado el Jugador 2!");
+               pj2++;
+               tScoreJ2.setText("Score: "+pj2);
+
+           }else if(jj1==3 && jj2==1){ //gana j2
+               tGanador.setText("¡Ha ganado el Jugador 2!");
+               pj2++;
+               tScoreJ2.setText("Score: "+pj2);
+
+           }else if(jj1==3 && jj2==2){ //gana j1
+               tGanador.setText("¡Ha ganado el Jugador 1!");
+               pj1++;
+               tScoreJ1.setText("Score: "+pj1);
+           }
+        }
+
+    }
+
+    public void nuevaRonda(View Vista){
+        if(ganador){
+          nronda++;
+          listoJ1 = false;
+          listoJ2 = false;
+          ganador= false;
+          TextView tListoJ1 = (TextView) findViewById(R.id.tListoJ1);
+          TextView tListoJ2 = (TextView) findViewById(R.id.tListoJ2);
+          TextView tRonda = (TextView) findViewById(R.id.tRonda);
+          TextView tGanador= (TextView) findViewById(R.id.tGanador);
+          tListoJ1.setText("...");
+          tListoJ2.setText("...");
+          tRonda.setText("Ronda: "+nronda);
+          tGanador.setText("¿Quién ganará?");
+        }
+    }
+
+    public void nuevoJuego(View vista){
+        listoJ1 = false;
+        listoJ2 = false;
+        ganador= false;
+        nronda=1;
+        pj2=0;
+        pj1=0;
+        TextView tListoJ1 = (TextView) findViewById(R.id.tListoJ1);
+        TextView tListoJ2 = (TextView) findViewById(R.id.tListoJ2);
+        TextView tRonda = (TextView) findViewById(R.id.tRonda);
+        TextView tGanador = (TextView) findViewById(R.id.tGanador);
+        TextView tScoreJ1 = (TextView) findViewById(R.id.tScoreJ1);
+        TextView tScoreJ2 = (TextView) findViewById(R.id.tScoreJ2);
+        tListoJ1.setText("...");
+        tListoJ2.setText("...");
+        tRonda.setText("Ronda: "+nronda);
+        tScoreJ1.setText("Score: "+pj1);
+        tScoreJ2.setText("Score: "+pj2);
+        tGanador.setText("¿Quién ganará?");
+    }
 }

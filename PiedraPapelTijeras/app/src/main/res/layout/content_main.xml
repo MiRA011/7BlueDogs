@@ -34,6 +34,7 @@
                 android:id="@+id/bResolver"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="resolver"
                 android:text="@string/resolver"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -54,6 +55,7 @@
                 android:id="@+id/bNuevaRonda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="nuevaRonda"
                 android:text="@string/nueva_ronda"
                 android:textSize="20sp" />
 
@@ -65,6 +67,7 @@
                 android:id="@+id/bNuevoJuego"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="nuevoJuego"
                 android:text="@string/nuevo_juego"
                 android:textSize="20sp" />
 
@@ -108,6 +111,7 @@
                 android:id="@+id/bPiedra"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
+                android:onClick="pulsaPiedra"
                 android:text="@string/piedra"
                 android:textSize="28sp" />
 
@@ -119,6 +123,7 @@
                 android:id="@+id/bPapel"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
+                android:onClick="pulsaPapel"
                 android:text="@string/papel"
                 android:textSize="28sp" />
         </LinearLayout>
@@ -135,6 +140,7 @@
                 android:id="@+id/bTijeras"
                 android:layout_width="150dp"
                 android:layout_height="55dp"
+                android:onClick="pulsaTijera"
                 android:text="@string/tijeras"
                 android:textSize="28sp" />
         </LinearLayout>
@@ -207,11 +213,6 @@
                 android:text="@string/tRonda"
                 android:textSize="28sp" />
 
-            <TextView
-                android:id="@+id/tCuentaRonda"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout

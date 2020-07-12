@@ -11,11 +11,11 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="jugador_1">Jugador 1</string>
     <string name="tListoJ1">...</string>
-    <string name="scorej1">Score:</string>
+    <string name="scorej1">Score: 0</string>
     <string name="tRonda">Ronda: 1</string>
     <string name="jugador_2">Jugador 2</string>
     <string name="t_listo_j2">...</string>
-    <string name="scorej2">Score:</string>
+    <string name="scorej2">Score: 0</string>
     <string name="ganador">¿Quién ganará?</string>
     <string name="piedra">Piedra</string>
     <string name="papel">Papel</string>
