@@ -185,7 +185,7 @@
                 android:id="@+id/tListoJ1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tListoJ1"
+                android:text="@string/esperando"
                 android:textAlignment="center"
                 android:textSize="30sp" />
 
@@ -197,7 +197,7 @@
                 android:id="@+id/tScoreJ1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/scorej1"
+                android:text="@string/scoreInicial"
                 android:textAlignment="center"
                 android:textSize="28sp" />
         </LinearLayout>
@@ -215,7 +215,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/tRonda"
-                android:textSize="28sp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
 
@@ -242,7 +242,7 @@
                 android:id="@+id/tListoJ2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/t_listo_j2"
+                android:text="@string/esperando"
                 android:textSize="30sp" />
 
             <Space
@@ -253,7 +253,7 @@
                 android:id="@+id/tScoreJ2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/scorej2"
+                android:text="@string/scoreInicial"
                 android:textAlignment="center"
                 android:textSize="28sp" />
         </LinearLayout>
