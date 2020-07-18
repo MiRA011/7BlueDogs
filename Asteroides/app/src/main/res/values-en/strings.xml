@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Asteroids</string>
+    <string name="comenzar">¡Play!</string>
+    .3021
+    <string name="config">Configuration</string>
+    <string name="salir">Exit</string>
+    <string name="info">About...</string>
+    <string name="rocas">Stones</string>
+</resources>
