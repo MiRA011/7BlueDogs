@@ -31,12 +31,12 @@ public class MainActivity extends AppCompatActivity {
             jj1=1;
             listoJ1=true;
             TextView listo= (TextView) findViewById(R.id.tListoJ1);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         }else if(listoJ1 && !listoJ2){
             jj2=1;
             listoJ2=true;
             TextView listo= (TextView) findViewById(R.id.tListoJ2);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         }
     }
     public void pulsaPapel(View vista){
@@ -44,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
             jj1=2;
             listoJ1=true;
             TextView listo= (TextView) findViewById(R.id.tListoJ1);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         }else if(listoJ1 && !listoJ2){
             jj2=2;
             listoJ2=true;
             TextView listo= (TextView) findViewById(R.id.tListoJ2);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         }
     }
     public void pulsaTijera(View vista) {
@@ -57,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
             jj1 = 3;
             listoJ1 = true;
             TextView listo = (TextView) findViewById(R.id.tListoJ1);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         } else if (listoJ1 && !listoJ2) {
             jj2 = 3;
             listoJ2 = true;
             TextView listo = (TextView) findViewById(R.id.tListoJ2);
-            listo.setText("¡Listo!");
+            listo.setText(R.string.listo);
         }
     }
 
@@ -73,36 +73,37 @@ public class MainActivity extends AppCompatActivity {
             TextView tScoreJ2 = (TextView) findViewById(R.id.tScoreJ2);
             ganador=true;
            if(jj1==jj2){ //empate
-               tGanador.setText("Hay un empate...");
+               tGanador.setText(R.string.empate);
            }else if(jj1==1 && jj2==2){ //gana j2
-               tGanador.setText("¡Ha ganado el Jugador 2!");
+               tGanador.setText(R.string.ganaj2);
                pj2++;
-               tScoreJ2.setText("Score: "+pj2);
+               tScoreJ2.setText(getString(R.string.score) + pj2);
 
            }else if(jj1==1 && jj2==3){ //gana j1
-               tGanador.setText("¡Ha ganado el Jugador 1!");
+               tGanador.setText(R.string.ganaj1);
                pj1++;
-               tScoreJ1.setText("Score: "+pj1);
+               tScoreJ1.setText(getString(R.string.score) + pj1);
 
            }else if(jj1==2 && jj2==1){ //gana j1
-               tGanador.setText("¡Ha ganado el Jugador 1!");
+               tGanador.setText(R.string.ganaj1);
                pj1++;
-               tScoreJ1.setText("Score: "+pj1);
+               tScoreJ1.setText(getString(R.string.score) + pj1);
 
            }else if(jj1==2 && jj2==3){ //gana j2
-               tGanador.setText("¡Ha ganado el Jugador 2!");
+               tGanador.setText(R.string.ganaj2);
                pj2++;
-               tScoreJ2.setText("Score: "+pj2);
+               tScoreJ2.setText(getString(R.string.score) + pj2);
 
            }else if(jj1==3 && jj2==1){ //gana j2
-               tGanador.setText("¡Ha ganado el Jugador 2!");
+               tGanador.setText(R.string.ganaj2);
                pj2++;
-               tScoreJ2.setText("Score: "+pj2);
+               tScoreJ2.setText(getString(R.string.score) + pj2
+               );
 
            }else if(jj1==3 && jj2==2){ //gana j1
-               tGanador.setText("¡Ha ganado el Jugador 1!");
+               tGanador.setText(R.string.ganaj1);
                pj1++;
-               tScoreJ1.setText("Score: "+pj1);
+               tScoreJ1.setText(getString(R.string.score) + pj1);
            }
         }
 
@@ -120,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
           TextView tGanador= (TextView) findViewById(R.id.tGanador);
           tListoJ1.setText("...");
           tListoJ2.setText("...");
-          tRonda.setText("Ronda: "+nronda);
-          tGanador.setText("¿Quién ganará?");
+          tRonda.setText(getString(R.string.tcuentaRonda)+nronda);
+          tGanador.setText(R.string.ganador);
         }
     }
 
@@ -140,9 +141,9 @@ public class MainActivity extends AppCompatActivity {
         TextView tScoreJ2 = (TextView) findViewById(R.id.tScoreJ2);
         tListoJ1.setText("...");
         tListoJ2.setText("...");
-        tRonda.setText("Ronda: "+nronda);
-        tScoreJ1.setText("Score: "+pj1);
-        tScoreJ2.setText("Score: "+pj2);
-        tGanador.setText("¿Quién ganará?");
+        tRonda.setText(getString(R.string.tcuentaRonda) + nronda);
+        tScoreJ1.setText(getString(R.string.score) + pj1);
+        tScoreJ2.setText(getString(R.string.score) + pj2);
+        tGanador.setText(R.string.ganador);
     }
 }
