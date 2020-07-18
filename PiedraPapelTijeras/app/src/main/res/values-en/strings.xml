@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rock-paper-scissors</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="jugador_1">Player 1</string>
+    <string name="tRonda">Round: 1</string>
+    <string name="jugador_2">Player 2</string>
+    <string name="ganador">Who will be the winner?</string>
+    <string name="piedra">Rock</string>
+    <string name="papel">Paper</string>
+    <string name="tijeras">Scissors</string>
+    <string name="resolver">Resolve</string>
+    <string name="nuevo_juego">New Game</string>
+    <string name="nueva_ronda">Next Round</string>
+    <string name="listo">Ready!</string>
+    <string name="tcuentaRonda">Round: </string>
+    <string name="empate">Tie...</string>
+    <string name="ganaj1">Player 1 wins!</string>
+    <string name="ganaj2">Player 2 wins!</string>
+</resources>
