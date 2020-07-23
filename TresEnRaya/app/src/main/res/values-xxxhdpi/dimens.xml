@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="padding_Pantalla">24p</dimen>
+    <dimen name="padding_Pantalla">24dp</dimen>
     <dimen name="casilla">160dp</dimen>
     <dimen name="texto_Titulo">48sp</dimen>
     <dimen name="texto_Boton">36sp</dimen>

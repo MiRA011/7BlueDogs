@@ -1,6 +1,10 @@
-<resources>
+<resources>e.Holo.NoActionBar.Fullscree
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Holo.NoActionBar.Fullscreen">
+    <style name="AppTheme" parent="android:Theme.Material.Wallpaper">
+        <item name="android:textColorTertiary">#FFFFFF</item>
+        <item name="android:shadowColor">#F556F8</item>
+        <item name="android:shadowRadius">2</item>
+
         <!-- Customize your theme here. -->
     </style>
 
