@@ -1,0 +1,37 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.NoActionBar.Fullscreen">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Titulo">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/texto_Titulo</item>
+    </style>
+
+    <style name="Boton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:minWidth">@dimen/ancho_min_Boton</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/alto_min_Boton</item>
+        <item name="android:layout_margin">@dimen/margen_Boton</item>
+        <item name="android:textSize">@dimen/texto_Boton</item>
+        <item name="android:onClick"></item>
+    </style>
+
+    <style name="RadioButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/texto_Radio</item>
+        <item name="alpha">0.8</item>
+    </style>
+
+    <style name="Casilla">
+        <item name="android:layout_width">@dimen/casilla</item>
+        <item name="android:layout_height">@dimen/casilla</item>
+
+
+    </style>
+
+</resources>
