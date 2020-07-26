@@ -1,9 +1,9 @@
 <resources>e.Holo.NoActionBar.Fullscree
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="android:Theme.Material.Wallpaper">
+    <style name="AppTheme" parent="Theme.AppCompat">
         <item name="android:textColorTertiary">#FFFFFF</item>
         <item name="android:shadowColor">#F556F8</item>
-        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowRadius">0</item>
 
         <!-- Customize your theme here. -->
     </style>
@@ -22,6 +22,7 @@
         <item name="android:layout_margin">@dimen/margen_Boton</item>
         <item name="android:textSize">@dimen/texto_Boton</item>
         <item name="android:onClick">empezarPartida</item>
+        <item name="android:background">@drawable/boton</item>
     </style>
 
     <style name="RadioButton">
@@ -34,6 +35,7 @@
     <style name="Casilla">
         <item name="android:layout_width">@dimen/casilla</item>
         <item name="android:layout_height">@dimen/casilla</item>
+        <item name="android:layout_margin">2dp</item>
         <item name="android:src">@drawable/casilla</item>
         <item name="android:onClick">nuevaJugada</item>
     </style>
