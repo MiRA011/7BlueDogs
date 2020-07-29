@@ -2,28 +2,35 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:state_pressed="true">
+
         <shape>
-            <gradient android:startColor="#42FFFF"
-                android:endColor="#034FFF"
-                android:angle="180"></gradient>
+
+            <solid android:color="#202020" />
+
         </shape>
+
     </item>
 
     <item android:state_enabled="false">
+
         <shape>
-            <gradient android:startColor="#F49FFF"
-                android:endColor="#F40FFF"
-                android:angle="180"></gradient>
+
+            <solid android:color="#0c0c0c" />
+
         </shape>
+
     </item>
 
-
     <item>
+
         <shape>
-            <gradient android:startColor="#42F000"
-            android:endColor="#034000"
-            android:angle="180"></gradient>
+
+            <gradient android:startColor="#202020"
+                android:endColor="#414141"
+                android:angle="90"/>
+
         </shape>
+
     </item>
 
 </selector>
