@@ -31,7 +31,7 @@
             android:background="@drawable/boton"/>
 
         <RadioGroup
-            android:id="@+id/configd"
+            android:id="@+id/RadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
@@ -43,6 +43,7 @@
             <RadioButton
                 android:id="@+id/normal"
                 style="@style/RadioButton"
+                android:checked="true"
                 android:text="@string/normal" />
 
             <RadioButton
@@ -53,7 +54,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/dosjug"
+            android:id="@+id/bJugador2"
             android:text="@string/dos_jugadores"
             style="@style/Boton"
             android:background="@drawable/boton"/>
