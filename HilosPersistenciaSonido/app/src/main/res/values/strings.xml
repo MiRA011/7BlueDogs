@@ -7,10 +7,12 @@
     <string name="medio">Standard</string>
     <string name="dificil">Dificult</string>
     <string name="texto_ayuda">
-        El objetivo del juego es evitar que la pelota caiga al suelo,\n\n\n\n\n\n\n\n\n
-        Para empujar la pelota en una direccion concreta, pulsaremos en la pantalla en la direccion contraria \n\n\n\n\n\n\n\n\n
-        Y el objetivo tambien era aprender persistencia a hilos se supone \n \n\n\n\n\n\n\n\n
-        pero no estamos aprendiendo nada xd \n\n\n\n\n\n\n\n\n
-        Animo! xdddddd \n\n\n\n\n\n\n\n\n
+        The object of the game is to prevent the ball from falling to the ground, \n \n \n \n \n \n \n \n \n
+         To push the ball in a specific direction, we will press on the screen in the opposite direction \n \n \n \n \n \n \n \n \n
+         And the goal was also to learn thread persistence \n \n \n \n \n \n \n \n \n
+         but we are not learning anything xd \n \n \n \n \n \n \n \n \n
+         Cheer up! xdddddd \n \n \n \n \n \n \n \n \n
     </string>
+
+    <string name="volver">Back</string>
 </resources>

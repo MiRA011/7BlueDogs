@@ -3,6 +3,7 @@ package com.sevenbluedogs.hilospersistenciasonido;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 
 public class AyudaActividad extends AppCompatActivity {
 
@@ -12,5 +13,10 @@ public class AyudaActividad extends AppCompatActivity {
         setContentView(R.layout.activity_ayuda_actividad);
     }
 
+    public void volver(View vista){
+
+        onBackPressed();
+
+    }
 
 }

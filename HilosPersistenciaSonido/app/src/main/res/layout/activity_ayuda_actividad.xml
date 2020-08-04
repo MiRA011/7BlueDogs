@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/margen"
         android:layout_marginLeft="@dimen/margen"
         android:layout_marginRight="@dimen/margen"
-        android:layout_marginBottom="@dimen/margen"
+        android:layout_marginBottom="@dimen/margen_texto_ayuda"
         android:background="@drawable/fondo"
         >
         <TextView
@@ -27,6 +27,14 @@
 
 
     </ScrollView>
+    
+    <Button
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/volver"
+        style="@style/botones"
+        android:onClick="volver"
+        />
 
 
 </RelativeLayout>
