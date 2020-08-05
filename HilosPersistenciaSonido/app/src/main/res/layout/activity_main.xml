@@ -43,4 +43,12 @@
         android:layout_alignParentBottom="true"
         style="@style/boton_Ayuda"/>
 
+    <TextView
+        android:id="@+id/texto_puntuacion"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        style="@style/texto_botones"
+        android:text="Puntuación: "/>
+
+
 </RelativeLayout>

@@ -7,7 +7,6 @@ import android.graphics.drawable.BitmapDrawable;
 import androidx.core.content.ContextCompat;
 import android.view.Display;
 import android.view.WindowManager;
-import android.widget.ImageView;
 
 /**
  * Created by Juan on 23/02/2017.
@@ -45,7 +44,7 @@ public class Partida extends androidx.appcompat.widget.AppCompatImageView {
         fondo=Bitmap.createScaledBitmap(fondo, tam_pantX, tam_pantY, false);//mirar en clase Bitmap
 
 
-        BitmapDrawable objetoPelota=(BitmapDrawable)ContextCompat.getDrawable(contexto, R.drawable.pelota_1);
+        BitmapDrawable objetoPelota=(BitmapDrawable)ContextCompat.getDrawable(contexto, R.drawable.pelota);
 
         pelota=objetoPelota.getBitmap();
 
