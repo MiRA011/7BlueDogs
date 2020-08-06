@@ -24,7 +24,7 @@ public class Gestion extends AppCompatActivity {
         dificultad = extras.getInt("dificultad");
         partida= new Partida(getApplicationContext(),dificultad);
         temporizador= new Handler();
-        temporizador.postDelayed(hilo,20);
+        temporizador.postDelayed(hilo,FPS);
         setContentView(partida);
     }
 
@@ -35,7 +35,7 @@ public class Gestion extends AppCompatActivity {
                 fin();
             }else{
                 partida.invalidate(); // elimina el contenido de ImageView y llama de nuevo a onDraw()
-                temporizador.postDelayed(hilo,20);
+                temporizador.postDelayed(hilo,FPS);
             }
         }
     };
