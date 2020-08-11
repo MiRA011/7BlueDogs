@@ -7,5 +7,26 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <fragment
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu"
+        android:name="com.sevenbluedogs.Herramientas.Menu"
+        tools:layout="@layout/fragment_menu">
+
+    </fragment>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/maximo"
+            android:layout_height="@dimen/maximo"
+            android:src="@drawable/herramientas"></ImageView>
+
+    </RelativeLayout>
+
 
 </LinearLayout>

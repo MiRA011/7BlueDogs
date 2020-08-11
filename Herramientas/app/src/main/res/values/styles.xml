@@ -7,4 +7,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="botones">
+
+        <item name="android:layout_width">@dimen/largo</item>
+        <item name="android:layout_height">@dimen/largo</item>
+        <item name="android:scaleType">fitCenter</item>
+
+    </style>
+
+    <style name="espacio">
+
+        <item name="android:layout_width">30dp</item>
+        <item name="android:layout_height">1dp</item>
+
+    </style>
+
 </resources>
