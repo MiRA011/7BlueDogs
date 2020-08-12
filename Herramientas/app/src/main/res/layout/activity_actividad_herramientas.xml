@@ -6,4 +6,23 @@
     android:layout_height="match_parent"
     tools:context=".ActividadHerramientas">
 
+
+    <fragment
+        android:id="@+id/menu"
+        android:name="com.sevenbluedogs.Herramientas.Menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_menu">
+
+    </fragment>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+    </RelativeLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
