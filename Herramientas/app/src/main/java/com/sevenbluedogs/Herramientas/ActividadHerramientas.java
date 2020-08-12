@@ -31,11 +31,17 @@ public class ActividadHerramientas extends AppCompatActivity implements Comunica
     public void menu(int queboton){
 
         FragmentManager miManejador=getSupportFragmentManager();
-
         FragmentTransaction miTransaccion=miManejador.beginTransaction();
 
-        miTransaccion.replace(R.id.herramientas, misFragmentos[queboton] );
+        Fragment menuIluminado = new Menu();
+        Bundle datos = new Bundle();
+        datos.putInt("boton",queboton);
+        menuIluminado.setArguments(datos);
 
+        miTransaccion.replace(R.id.menu,menuIluminado);
+
+
+        miTransaccion.replace(R.id.herramientas, misFragmentos[queboton] );
         miTransaccion.commit();
 
     }
