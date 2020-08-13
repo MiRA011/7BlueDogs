@@ -15,6 +15,7 @@ public class Linterna extends Fragment {
 
     private ImageView linterna;
 
+    //
     private boolean apagada;
 
     public Linterna() {

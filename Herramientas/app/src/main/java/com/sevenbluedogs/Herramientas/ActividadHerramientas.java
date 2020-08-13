@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.hardware.camera2.CameraAccessException;
+import android.hardware.camera2.CameraManager;
 import android.os.Bundle;
 import android.widget.Toast;
 
 public class ActividadHerramientas extends AppCompatActivity implements ComunicaMenu, ManejaFlashCamara {
 
-    Fragment [] misFragmentos;
+    private Fragment [] misFragmentos;
+    private CameraManager camara;
+    private String idCamara;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +29,15 @@ public class ActividadHerramientas extends AppCompatActivity implements Comunica
         misFragmentos[2]=new Nivel();
 
         Bundle extras=getIntent().getExtras();
-
         menu(extras.getInt("idBoton"));
+
+        camara =(CameraManager) getSystemService(Context.CAMERA_SERVICE);
+        try {
+            idCamara =camara.getCameraIdList()[0];
+        } catch (CameraAccessException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -52,11 +64,23 @@ public class ActividadHerramientas extends AppCompatActivity implements Comunica
 
         if (estadoFlash){
 
-            Toast.makeText(this,"Flash desactivado", Toast.LENGTH_SHORT).show();
+            try {
+                camara.setTorchMode(idCamara,false);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+
+            //Toast.makeText(this,"Flash desactivado", Toast.LENGTH_SHORT).show();
 
         }else{
 
-            Toast.makeText(this,"Flash activado", Toast.LENGTH_SHORT).show();
+            try {
+                camara.setTorchMode(idCamara,true);
+            } catch (CameraAccessException e) {
+                e.printStackTrace();
+            }
+
+            //Toast.makeText(this,"Flash activado", Toast.LENGTH_SHORT).show();
 
         }
     }
