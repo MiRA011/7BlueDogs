@@ -24,7 +24,6 @@ public class Musica extends Fragment {
                              Bundle savedInstanceState) {
         final View miFragmento= inflater.inflate(R.layout.fragment_musica, container, false);
         ImageView altavoz = miFragmento.findViewById(R.id.musica);
-        ;
         altavoz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
