@@ -1,6 +1,7 @@
 package com.sevenbluedogs.Herramientas;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -25,7 +26,6 @@ public class Musica extends Fragment {
     public void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
-        encendida=false;
 
     }
 
@@ -33,8 +33,12 @@ public class Musica extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View miFragmento= inflater.inflate(R.layout.fragment_musica, container, false);
+        getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         altavoz=(ImageView)miFragmento.findViewById(R.id.musica);
+        if(encendida)altavoz.setImageResource(R.drawable.musica2);
+
         altavoz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +65,10 @@ public class Musica extends Fragment {
         Intent miReproductor=new Intent(getActivity(), ServicioMusica.class);
         getActivity().stopService(miReproductor);
         encendida= !encendida;
+    }
 
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

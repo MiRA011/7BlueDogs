@@ -79,9 +79,12 @@ public class ActividadHerramientas extends AppCompatActivity implements Comunica
             } catch (CameraAccessException e) {
                 e.printStackTrace();
             }
-
             //Toast.makeText(this,"Flash activado", Toast.LENGTH_SHORT).show();
-
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+       moveTaskToBack(true);
     }
 }
