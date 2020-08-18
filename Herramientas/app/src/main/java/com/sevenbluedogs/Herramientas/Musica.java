@@ -1,5 +1,6 @@
 package com.sevenbluedogs.Herramientas;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 
@@ -13,8 +14,18 @@ import android.widget.ImageView;
 
 public class Musica extends Fragment {
 
+    public boolean encendida;
+
+    private ImageView altavoz;
 
     public Musica() {
+
+    }
+
+    public void onCreate(Bundle savedInstanceState){
+
+        super.onCreate(savedInstanceState);
+        encendida=false;
 
     }
 
@@ -22,15 +33,34 @@ public class Musica extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View miFragmento= inflater.inflate(R.layout.fragment_musica, container, false);
-        ImageView altavoz = miFragmento.findViewById(R.id.musica);
+        View miFragmento= inflater.inflate(R.layout.fragment_musica, container, false);
+        altavoz=(ImageView)miFragmento.findViewById(R.id.musica);
         altavoz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MediaPlayer sonido = MediaPlayer.create(getContext(),R.raw.fast);
-                sonido.start();
+                if (encendida) apagaMusica();
+                else enciendeMusica();
+                /*MediaPlayer sonido = MediaPlayer.create(getContext(),R.raw.fast);
+                sonido.start();*/
             }
         });
         return miFragmento;
+    }
+    public void enciendeMusica(){
+
+        altavoz.setImageResource(R.drawable.musica2);
+        Intent miReproductor=new Intent(getActivity(), ServicioMusica.class);
+        getActivity().startService(miReproductor);
+        encendida= !encendida;
+
+    }
+
+    public void apagaMusica(){
+
+        altavoz.setImageResource(R.drawable.musica);
+        Intent miReproductor=new Intent(getActivity(), ServicioMusica.class);
+        getActivity().stopService(miReproductor);
+        encendida= !encendida;
+
     }
 }
