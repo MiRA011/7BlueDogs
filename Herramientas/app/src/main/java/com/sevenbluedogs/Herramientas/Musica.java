@@ -16,7 +16,6 @@ import android.widget.ImageView;
 public class Musica extends Fragment {
 
     public boolean encendida;
-
     private ImageView altavoz;
 
     public Musica() {
