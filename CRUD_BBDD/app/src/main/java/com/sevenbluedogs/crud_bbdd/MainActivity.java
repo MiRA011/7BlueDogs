@@ -63,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
         botonBorrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                SQLiteDatabase db = helper.getWritableDatabase();
+                // Define 'where' part of query.
+                String selection = Estructura_BBDD.NOMBRE_COLUMNA1 + " LIKE ?";
+                // Specify arguments in placeholder order.
+                String[] selectionArgs = { textoId.getText().toString() };
+                // Issue SQL statement.
+                int deletedRows = db.delete(Estructura_BBDD.TABLE_NAME, selection, selectionArgs);
+                Toast.makeText(getApplicationContext(), "Mi arma ka borrao el raistro kon id " + textoId.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -97,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 textoApellido.setText(cursor.getString(1));
                 cursor.close();
                 }catch(Exception manolo){
-                    Toast.makeText(getApplicationContext(), manolo.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), manolo.toString() + " PAYASO", Toast.LENGTH_LONG).show();
                 }
 
             }
