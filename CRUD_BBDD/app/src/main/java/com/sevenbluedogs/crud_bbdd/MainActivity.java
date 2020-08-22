@@ -80,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
                 String selection = Estructura_BBDD.NOMBRE_COLUMNA1 + " = ?";
                 String[] selectionArgs = { textoId.getText().toString() };
                 //String sortOrder = Estructura_BBDD.NOMBRE_COLUMNA2 + " DESC";
+
+                try{
                 Cursor cursor = db.query(
                         Estructura_BBDD.TABLE_NAME,   // The table to query
                         projection,             // The array of columns to return (pass null to get all)
@@ -94,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
                 textoNombre.setText(cursor.getString(0));
                 textoApellido.setText(cursor.getString(1));
                 cursor.close();
+                }catch(Exception manolo){
+                    Toast.makeText(getApplicationContext(), manolo.toString(), Toast.LENGTH_LONG).show();
+                }
 
             }
         });
