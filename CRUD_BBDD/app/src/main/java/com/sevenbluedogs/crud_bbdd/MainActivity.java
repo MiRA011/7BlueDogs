@@ -56,7 +56,24 @@ public class MainActivity extends AppCompatActivity {
         botonActualizar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SQLiteDatabase db = helper.getWritableDatabase();
 
+                // New value for one column
+                String title = "MyNewTitle";
+                ContentValues values = new ContentValues();
+                values.put(Estructura_BBDD.NOMBRE_COLUMNA2, textoNombre.getText().toString());
+                values.put(Estructura_BBDD.NOMBRE_COLUMNA3, textoApellido.getText().toString());
+
+                // Which row to update, based on the title
+                String selection = Estructura_BBDD.NOMBRE_COLUMNA1 + " LIKE ?";
+                String[] selectionArgs = { textoId.getText().toString() };
+
+                int count = db.update(
+                        Estructura_BBDD.TABLE_NAME,
+                        values,
+                        selection,
+                        selectionArgs);
+                Toast.makeText(getApplicationContext(), "Sactualizao" + textoId.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
 
@@ -70,7 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 String[] selectionArgs = { textoId.getText().toString() };
                 // Issue SQL statement.
                 int deletedRows = db.delete(Estructura_BBDD.TABLE_NAME, selection, selectionArgs);
-                Toast.makeText(getApplicationContext(), "Mi arma ka borrao el raistro kon id " + textoId.getText().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Mi arma ka borrao el reistro kon id " + textoId.getText().toString(), Toast.LENGTH_LONG).show();
+                textoId.setText("");
+                textoNombre.setText("");
+                textoApellido.setText("");
             }
         });
 
