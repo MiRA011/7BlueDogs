@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         values,
                         selection,
                         selectionArgs);
-                Toast.makeText(getApplicationContext(), "Sactualizao" + textoId.getText().toString(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Sactualizao er " + textoId.getText().toString(), Toast.LENGTH_LONG).show();
             }
         });
 
