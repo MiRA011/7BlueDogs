@@ -2,12 +2,16 @@ package com.sevenbluedogs.crud_bbdd;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.security.AccessController.getContext;
 
@@ -66,6 +70,31 @@ public class MainActivity extends AppCompatActivity {
         botonBuscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SQLiteDatabase db = helper.getReadableDatabase();
+
+                String[] projection = {
+                        Estructura_BBDD.NOMBRE_COLUMNA2,
+                        Estructura_BBDD.NOMBRE_COLUMNA3,
+                };
+
+                String selection = Estructura_BBDD.NOMBRE_COLUMNA1 + " = ?";
+                String[] selectionArgs = { textoId.getText().toString() };
+                //String sortOrder = Estructura_BBDD.NOMBRE_COLUMNA2 + " DESC";
+                Cursor cursor = db.query(
+                        Estructura_BBDD.TABLE_NAME,   // The table to query
+                        projection,             // The array of columns to return (pass null to get all)
+                        selection,              // The columns for the WHERE clause
+                        selectionArgs,          // The values for the WHERE clause
+                        null,                   // don't group the rows
+                        null,                   // don't filter by row groups
+                        null             // The sort order
+                );
+
+                cursor.moveToFirst();
+                textoNombre.setText(cursor.getString(0));
+                textoApellido.setText(cursor.getString(1));
+                cursor.close();
+
             }
         });
 
