@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Buscador rutas en metro</string>
-    <string name="preparando">Preparando su aplicaci贸n...</string>
+    <string name="preparando">Preparando su aplicaci髇...</string>
     <string name="calculando_ruta">Calculando ruta...</string>
-    <string name="error_origen">Origen err贸neo</string>
-    <string name="error_destino">Destino err贸neo </string>
-    <string name="linea_metro">L铆nea de metro</string>
+    <string name="error_origen">Origen err髇eo</string>
+    <string name="error_destino">Destino err髇eo </string>
+    <string name="linea_metro">L韓ea de metro</string>
     <string name="camine">Camine</string>
     <string name="metros">metros</string>
     <string name="titulo_dialogo">Error</string>
     <string name="ok_dialogo">OK</string>
-    <string name="error_conexion">Sin conexi贸n a Internet</string>
+    <string name="error_iconexion">Sin conexi髇 a Internet</string>
     <string name="error_red">Problema de red</string>
     <string name="buscador">Buscar</string>
     <string name="metro_madrid">Metro de Madrid</string>
     <string name="itinerario">Ruta</string>
     <string name="origen">Origen:</string>
     <string name="destino">Destino:</string>
-    <string name="buscar">Buscar ruta</string>
+    <string name="buscar">Buscar ruta</string>   
     <string name="web"><a href="http://www.pildorasinformaticas.es"></a></string>
     <string name="a_pie">A pie</string>
     <string name="mapa">Ver en mapa</string>
-    <string name="title_activity_maps">Mapa</string>
 </resources>
