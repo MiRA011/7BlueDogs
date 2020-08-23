@@ -42,4 +42,5 @@
 
     </style>
 
-    <style name="boton" parent="@style/cabecera">
+    <style name="boton" parent="@style/cabecera"/>
+</resources>
