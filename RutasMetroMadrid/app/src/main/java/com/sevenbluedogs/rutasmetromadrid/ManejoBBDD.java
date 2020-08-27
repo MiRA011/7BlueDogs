@@ -91,6 +91,10 @@ public class ManejoBBDD extends SQLiteOpenHelper {
         return lasLineas;
     }
 
+    public void cerrarBBDD(){
+        bbdd.close();
+    }
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
