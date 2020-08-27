@@ -65,6 +65,32 @@ public class ManejoBBDD extends SQLiteOpenHelper {
         return estacion;
     }
 
+    public Lineas[] dameInfoLineas(String [] nombresDeLineas){
+        Lineas [] lasLineas= new Lineas[nombresDeLineas.length];
+        Cursor miCursor=null;
+
+        for (int i =0; i<nombresDeLineas.length;i++){
+            lasLineas[i]=new Lineas();
+            lasLineas[i].nombre=nombresDeLineas[i];
+            miCursor=bbdd.rawQuery("SELECT Id FROM "+nombresDeLineas[i],null);
+            lasLineas[i].estaciones= new Location[miCursor.getCount()];
+            int contador = 0;
+
+            miCursor.moveToFirst();
+            //Guardamos las estaciones de la linea actual
+            while(!miCursor.isAfterLast()) {
+                int estacion = Integer.parseInt(miCursor.getString(0));
+                lasLineas[i].estaciones[contador] = datosEstacion(estacion);
+                miCursor.moveToNext();
+                contador++;
+            }
+
+        }
+
+        if(miCursor!=null && miCursor.isClosed()) miCursor.close();
+        return lasLineas;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
