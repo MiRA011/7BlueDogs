@@ -1,8 +1,14 @@
 package com.sevenbluedogs.rutasmetromadrid;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.location.Location;
+
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import androidx.annotation.Nullable;
 
@@ -29,6 +35,34 @@ public class ManejoBBDD extends SQLiteOpenHelper {
 
         }
 
+    }
+
+    private void copiaBBDD(Context context){
+        try {
+            InputStream datosEntrada = context.getAssets().open("apradasMetro.db3");
+            OutputStream datosSalida=new FileOutputStream(rutaAlmacenamiento);
+            byte[] bufferBBDD=new byte[1024];
+            int longitud;
+            while((longitud=datosEntrada.read(bufferBBDD))>0){
+                datosSalida.flush();
+                datosSalida.close();
+                datosEntrada.close();
+            }
+        }catch (Exception Manolo){
+
+        }
+    }
+
+    public Location datosEstacion(int id){
+        Location estacion;
+        Cursor miCursor;
+        miCursor=bbdd.rawQuery("SELECT * FROM paradas WHERE id=" + id, null);
+        miCursor.moveToFirst();
+        estacion=new Location(miCursor.getString(1));
+        estacion.setLatitude(Double.parseDouble(miCursor.getString(2)));
+        estacion.setLongitude((Double.parseDouble(miCursor.getString(3))));
+        miCursor.close();
+        return estacion;
     }
 
     @Override
