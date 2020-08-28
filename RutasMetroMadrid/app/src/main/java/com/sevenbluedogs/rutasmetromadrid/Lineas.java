@@ -14,6 +14,8 @@ public class Lineas implements Parcelable {
     public double datosParadaDestino;
 
 
+    public Lineas(){}
+
     protected Lineas(Parcel in) {
         nombre = in.readString();
         estaciones = in.createTypedArray(Location.CREATOR);
