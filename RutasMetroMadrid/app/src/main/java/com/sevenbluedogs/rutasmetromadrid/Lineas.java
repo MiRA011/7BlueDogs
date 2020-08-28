@@ -23,7 +23,7 @@ public class Lineas implements Parcelable {
         datosParadaDestino = in.readDouble();
     }
 
-    public static final Creator<Lineas> CREATOR = new Creator<Lineas>() {
+    public static final Parcelable.Creator<Lineas> CREATOR = new Parcelable.Creator<Lineas>() {
         @Override
         public Lineas createFromParcel(Parcel in) {
             return new Lineas(in);
@@ -43,7 +43,7 @@ public class Lineas implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(nombre);
-        parcel.writeTypedArray(estaciones, i);
+        parcel.writeTypedArray(estaciones, 0);
         parcel.writeInt(origenRuta);
         parcel.writeInt(finalRuta);
         parcel.writeDouble(datosParadaOrigen);
