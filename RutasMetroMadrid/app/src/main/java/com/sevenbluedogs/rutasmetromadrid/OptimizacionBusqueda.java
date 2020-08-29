@@ -4,6 +4,15 @@ import android.location.Location;
 
 import com.google.android.gms.maps.internal.ILocationSourceDelegate;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
+
 public class OptimizacionBusqueda {
 
     public static Location busca(String direccion){
@@ -24,7 +33,46 @@ public class OptimizacionBusqueda {
 
 
     private static Location consultaLocalizacion(String direccion, Location centroCiudad){
-        Location localizacion = null;
-        return localizacion;
+        Location localizacion;
+        InputStream entradaDatos;
+        HttpURLConnection cliente;
+        //Establecer conexión
+        try{
+        URL url=new URL("http://maps.google.com/maps/api/geocode/geocode?address=" + URLEncoder.encode(direccion,"UTF-8"));
+        cliente = (HttpURLConnection) url.openConnection();
+        cliente.connect();
+
+            try {
+                entradaDatos = new BufferedInputStream(cliente.getInputStream());
+                leerStreamDatos(entradaDatos);
+            } finally {
+                cliente.disconnect();
+            }
+            StringBuilder cadena=new StringBuilder();
+            int caracter;
+            while((caracter=entradaDatos.read())!=-1){
+                cadena.append((char)caracter);
+            }
+            //transformamos la información obtenda del flujo stream en objeto JSON
+            JSONObject objetoJSON =new JSONObject(cadena.toString());
+            if(!(objetoJSON.getString("status").equals("OK"))) return null;
+            JSONArray direcciones=objetoJSON.getJSONArray("results");
+            if(direcciones==null || direcciones.length()==0) return null;
+            localizacion=getLocalizacion(direcciones.getJSONObject(0));
+            return localizacion;
+
+        }catch(Exception Manolo){
+
+        }
+
+    }
+
+    private static String leerStreamDatos(InputStream entrada){
+        return "";
+    }
+
+    private static Location getLocalizacion(JSONObject dire) throws Exception{
+        Location loc;
+        return null;
     }
 }
