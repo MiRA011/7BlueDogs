@@ -101,11 +101,12 @@ public class Buscador extends AppCompatActivity {
             enviar.setEnabled(true);
             muestraRuta();
         }
-
-        public void muestraRuta() {
-
-        }
     }
+
+    public void muestraRuta() {
+
+    }
+
     public void onBackPressed(){
         if(barraProgreso!=null) barraProgreso=null;
         moveTaskToBack(true);
