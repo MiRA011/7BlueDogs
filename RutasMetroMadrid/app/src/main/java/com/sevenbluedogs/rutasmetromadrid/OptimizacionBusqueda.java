@@ -33,7 +33,7 @@ public class OptimizacionBusqueda {
 
 
     private static Location consultaLocalizacion(String direccion, Location centroCiudad){
-        Location localizacion;
+        Location localizacion = null;
         InputStream entradaDatos;
         HttpURLConnection cliente;
         //Establecer conexión
@@ -59,12 +59,11 @@ public class OptimizacionBusqueda {
             JSONArray direcciones=objetoJSON.getJSONArray("results");
             if(direcciones==null || direcciones.length()==0) return null;
             localizacion=getLocalizacion(direcciones.getJSONObject(0));
-            return localizacion;
 
         }catch(Exception Manolo){
 
         }
-
+        return localizacion;
     }
 
     private static String leerStreamDatos(InputStream entrada){
@@ -72,7 +71,13 @@ public class OptimizacionBusqueda {
     }
 
     private static Location getLocalizacion(JSONObject dire) throws Exception{
-        Location loc;
-        return null;
+        String direccion=dire.getString("formatted_address"); //Extrae dirección
+        direccion=new String(direccion.getBytes("ISO-8859-1"), "UTF-8"); //Convierte la dirección extraída a UTF-8
+        Location localizacion=new Location(direccion);
+        double latitud=dire.getJSONObject("geometry").getJSONObject("location").getDouble("lat"); //Extrae la latitud
+        double longitud=dire.getJSONObject("geometry").getJSONObject("location").getDouble("lng"); //Extrae la longitud
+        localizacion.setLatitude(latitud);
+        localizacion.setLongitude(longitud);
+        return localizacion;
     }
 }
