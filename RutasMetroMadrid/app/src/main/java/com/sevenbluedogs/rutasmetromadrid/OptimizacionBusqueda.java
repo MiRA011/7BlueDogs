@@ -48,11 +48,14 @@ public class OptimizacionBusqueda {
             } finally {
                 cliente.disconnect();
             }
+
             StringBuilder cadena=new StringBuilder();
             int caracter;
+
             while((caracter=entradaDatos.read())!=-1){
                 cadena.append((char)caracter);
             }
+
             //transformamos la información obtenda del flujo stream en objeto JSON
             JSONObject objetoJSON =new JSONObject(cadena.toString());
             if(!(objetoJSON.getString("status").equals("OK"))) return null;
@@ -61,6 +64,7 @@ public class OptimizacionBusqueda {
             localizacion=getLocalizacion(direcciones.getJSONObject(0));
 
         }catch(Exception Manolo){
+            //Aqui se capturan todos los errores
 
         }
         return localizacion;

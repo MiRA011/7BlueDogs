@@ -25,6 +25,27 @@ public class Lineas implements Parcelable {
         datosParadaDestino = in.readDouble();
     }
 
+    public void distancias (Location origen, Location destino){
+        datosParadaOrigen =origen.distanceTo(estaciones[0]);
+        datosParadaDestino =destino.distanceTo(estaciones[0]);
+
+        //Buscamos las estaciones mas cercanas al origen y destino que nos proporcionan por parametros
+        for(int i = 1; i<estaciones.length;i++){
+
+            if(origen.distanceTo(estaciones[i])<datosParadaOrigen){
+                origenRuta=i;
+                datosParadaOrigen =origen.distanceTo(estaciones[i]);
+            }
+
+            if(destino.distanceTo(estaciones[i])<datosParadaDestino){
+                finalRuta=i;
+                datosParadaDestino =destino.distanceTo(estaciones[i]);
+            }
+            
+        }
+
+    }
+
     public static final Parcelable.Creator<Lineas> CREATOR = new Parcelable.Creator<Lineas>() {
         @Override
         public Lineas createFromParcel(Parcel in) {
