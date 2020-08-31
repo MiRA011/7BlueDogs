@@ -41,10 +41,16 @@ public class Lineas implements Parcelable {
                 finalRuta=i;
                 datosParadaDestino =destino.distanceTo(estaciones[i]);
             }
-            
+
         }
 
     }
+
+    public double sumaDistMetros(){
+        return datosParadaOrigen+datosParadaDestino;
+    }
+
+
 
     public static final Parcelable.Creator<Lineas> CREATOR = new Parcelable.Creator<Lineas>() {
         @Override
