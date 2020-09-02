@@ -2,10 +2,17 @@ package com.sevenbluedogs.rutasmetromadrid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Rutas extends AppCompatActivity {
 
@@ -16,6 +23,24 @@ public class Rutas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rutas);
+
+        Intent miIntento=this.getIntent();
+        String linea=miIntento.getStringExtra("LINEAS");
+        ((TextView)findViewById(R.id.linea)).setText(linea);
+
+        Bundle miBundle=getIntent().getExtras();
+        Parcelable[] datos=miBundle.getParcelableArray("PARADAS");
+        Location[] ruta= Arrays.copyOf(datos, datos.length,Location[].class);
+
+        LinearLayout rutaContenedor=(LinearLayout)findViewById(R.id.pantalla);
+        LayoutInflater inflador=(LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
+    }
+
+    public void mapa (View vista){
+        Bundle miBundle=getIntent().getExtras();
+        Intent miIntento=new Intent(this, MapsActivity.class);
+        miIntento.putExtras(miBundle);
+        startActivity(miIntento);
     }
 
     public void mejorRuta(Location origen, Location destino, Lineas[] lasLineas){
