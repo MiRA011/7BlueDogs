@@ -37,6 +37,12 @@ public class Rutas extends AppCompatActivity {
             return;
         }
 
+        //Esto lo he escrito yo por que lo que ponia el tio estaba mal por logica
+        paradas=new Location[mejorLinea.finalRuta-mejorLinea.origenRuta+1];
+        for(int i=0; i<paradas.length;i++){
+            paradas[i]=mejorLinea.estaciones[mejorLinea.origenRuta+i];
+        }
+        //todomal
     }
 
 }
