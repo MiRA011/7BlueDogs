@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -57,7 +58,10 @@ public class Rutas extends AppCompatActivity {
     }
 
     private void pintaEtapa(LayoutInflater inflador, int imagen, String texto, LinearLayout contenedor ){
-
+        LinearLayout distanciaEstaciones=(LinearLayout)inflador.inflate(R.layout.distancia_estaciones, null);
+        ((ImageView)distanciaEstaciones.findViewById(R.id.icono)).setImageResource(imagen);
+        ((TextView)distanciaEstaciones.findViewById(R.id.texto)).setText(texto);
+        contenedor.addView(distanciaEstaciones);
     }
 
     public void mapa (View vista){
