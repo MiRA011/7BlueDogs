@@ -34,6 +34,30 @@ public class Rutas extends AppCompatActivity {
 
         LinearLayout rutaContenedor=(LinearLayout)findViewById(R.id.pantalla);
         LayoutInflater inflador=(LayoutInflater)this.getSystemService(LAYOUT_INFLATER_SERVICE);
+
+        //pintamos la ruta
+        //punto inicio
+        pintaEtapa(inflador,R.drawable.esfera_inicio_fin, ruta[0].getProvider(),rutaContenedor);
+        //Hombre caminando
+        String texto = getString(R.string.a_pie) + " " + (int) (ruta[0].distanceTo(ruta[1])) + " " + getString(R.string.metros);
+        pintaEtapa(inflador,R.drawable.caminando,texto,rutaContenedor);
+
+        //Rutas intermedias
+        for (int i=1; i<ruta.length-1; i++){
+            pintaEtapa(inflador,R.drawable.esfera_etapa,ruta[i].getProvider(),rutaContenedor);
+        }
+
+        //Muñeco caminando si hay mas de dos elementos
+        if(ruta.length>2){
+            texto=getString(R.string.a_pie) + " " + (int) (ruta[ruta.length-2].distanceTo(ruta[ruta.length-1])) + " " + getString(R.string.metros);
+            pintaEtapa(inflador,R.drawable.caminando,texto,rutaContenedor);
+        }
+        //Destino
+        pintaEtapa(inflador,R.drawable.esfera_inicio_fin, ruta[ruta.length-1].getProvider(),rutaContenedor);
+    }
+
+    private void pintaEtapa(LayoutInflater inflador, int imagen, String texto, LinearLayout contenedor ){
+
     }
 
     public void mapa (View vista){
