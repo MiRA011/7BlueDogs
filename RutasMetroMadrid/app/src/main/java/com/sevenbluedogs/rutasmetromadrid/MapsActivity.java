@@ -2,14 +2,23 @@ package com.sevenbluedogs.rutasmetromadrid;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
+import android.os.Parcelable;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.sql.Array;
+import java.util.Arrays;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -38,9 +47,41 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
+        //Cargamos los datos
+        Bundle miBundle = getIntent().getExtras();
+        Parcelable[] datos= miBundle.getParcelableArray("PARADAS");
+        Location[] ruta= Arrays.copyOf(datos,datos.length,Location[].class);
+
+        //Limpiamos el mapa
+        mMap.clear();
+
+        //Variables para pintar el mapa
+        LatLng posicion, anteriorPosicion;
+        float matizColor= BitmapDescriptorFactory.HUE_GREEN;
+
+        posicion= new LatLng(ruta[0].getLatitude(),ruta[0].getLongitude());
+        mMap.addMarker(new MarkerOptions().position(posicion).icon(BitmapDescriptorFactory.defaultMarker(matizColor)));
+        int color= Color.RED;
+        matizColor = BitmapDescriptorFactory.HUE_RED;
+
+        for (int i =1; i<ruta.length;i++){
+            anteriorPosicion=posicion;
+            posicion= new LatLng(ruta[i].getLatitude(),ruta[i].getLongitude());
+
+            if(i==ruta.length-1){
+                matizColor= BitmapDescriptorFactory.HUE_GREEN;
+            }
+
+            mMap.addPolyline(new PolylineOptions().add(anteriorPosicion,posicion).width(7).color(Color.BLUE).geodesic(true));
+            mMap.addMarker(new MarkerOptions().position(posicion).icon(BitmapDescriptorFactory.defaultMarker(matizColor)));
+            
+        }
+
+
+        /*
         // Add a marker in Sydney and move the camera
         LatLng sydney = new LatLng(-34, 151);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));**/
     }
 }
